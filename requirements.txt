@@ -9,3 +9,4 @@ chromadb
 lark
 langchain_openai
 faiss-cpu
+configparser

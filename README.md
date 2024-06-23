@@ -8,6 +8,8 @@ O Obejetivo deste projeto é criar uma interface amigavel para o uso do Chat GPT
 
 * Ter o python Instalado. o Download poder ser feito [[aqui!]](https://www.python.org/downloads/)
 
+* Possuir uma API do chat_GPT, pode obter uma conta [aqui!](https://platform.openai.com/).
+
 * Realize a instalação das dependências no terminal.
 
 ```bash
