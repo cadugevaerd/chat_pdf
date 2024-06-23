@@ -42,6 +42,8 @@ def inicializar():
                 if st.session_state['key'] != "":
                     limpar_gpt()
                     st.session_state['primeira_vez'] = False
+                    st.session_state['resposta'] = None
+                    st.session_state['chain'] = None
                     st.rerun()
         if api_key == "" or api_key is None:
             st.error("Nenhuma API Key fornecida, acesse a aba de configuração e defina sua chave de API do Chat GPT.")
@@ -54,6 +56,8 @@ def inicializar():
         st.session_state['paginas'] = []
     if 'memory' not in st.session_state:
         st.session_state['memory'] = None
+    if 'resposta' not in st.session_state:
+        st.session_state['resposta'] = None
         #memory = ConversationBufferMemory(return_messages=True)
         #memory.chat_memory.add_user_message("Oi")
         #memory.chat_memory.add_ai_message("Ola, eu sou uma LLM")
@@ -65,9 +69,7 @@ def trata_chat(input):
         st.error("Nenhum PDF carregado!")
         st.session_state['carregado'] = False
         st.session_state['paginas'] = []
-        #if st.session_state['memory'] is not None:
-            #st.session_state['memory'] = st.session_state['memory'].clear()
-    
+        st.session_state['resposta'] = None
     else:
         chain = st.session_state['chain']
         memory = chain.memory
@@ -80,7 +82,8 @@ def trata_chat(input):
             chat_human = st.chat_message("human")
             chat_human.markdown(input)
             with st.spinner("Carregando..."):
-                chain({"question": input})
+                resposta = chain.invoke({"question": input})
+                st.session_state['resposta'] = resposta
                 st.rerun()
 
 def cria_input():

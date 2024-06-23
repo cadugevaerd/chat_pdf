@@ -8,7 +8,7 @@ def valida_config():
 
         config = configparser.ConfigParser()
 
-        prompt = """Você está prestes a interagir com documentos PDFs. Sua tarefa é buscar informações relevantes nos documentos PDF fornecidos e gerar respostas precisas com base nesses documentos. Siga as instruções abaixo:
+        prompt = """Você está prestes a interagir com documentos PDFs anexados. Sua tarefa é buscar informações relevantes nos documentos PDF fornecidos e gerar respostas precisas com base nesses documentos. Siga as instruções abaixo:
 
         1. **Como Responder às Perguntas:**
         - Quando uma pergunta for feita, você deve buscar a informação relevante nos PDFs disponíveis.
