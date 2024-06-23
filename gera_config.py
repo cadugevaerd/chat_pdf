@@ -2,9 +2,7 @@ import configparser
 import os
 
 def valida_config():
-    if not os.path.isdir('.streamlit'):
-        os.mkdir('.streamlit')
-    if not os.path.isfile('.streamlit/secrets.toml'):
+    if not os.path.isfile('config.ini'):
 
         config = configparser.ConfigParser()
 
@@ -47,7 +45,7 @@ def valida_config():
             "key": ""
         }
 
-        with open('.streamlit/secrets.toml', 'w+', encoding='utf-8') as configfile:
+        with open('config.ini', 'w+', encoding='utf-8') as configfile:
             config.write(configfile)
             
         return True
@@ -66,12 +64,12 @@ def salvar_config(key_chat_gpt,input_modelo,input_retrieval,input_args_retrieval
         'key': key_chat_gpt
     }
     
-    with open('.streamlit/secrets.toml', 'w+', encoding='utf-8') as configfile:
+    with open('config.ini', 'w+', encoding='utf-8') as configfile:
         config.write(configfile)
 
 def load_config():
     config = configparser.ConfigParser()
-    config.read('.streamlit/secrets.toml')
+    config.read('config.ini')
     return config
 
 def limpar_gpt():
@@ -81,5 +79,5 @@ def limpar_gpt():
         'key': ""
     }
 
-    with open('.streamlit/secrets.toml', 'w+', encoding='utf-8') as configfile:
+    with open('config.ini', 'w+', encoding='utf-8') as configfile:
         config.write(configfile)
