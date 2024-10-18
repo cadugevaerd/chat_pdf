@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O Obejetivo deste projeto é criar uma interface amigavel para o uso do Chat GPT em conversas de arquivos PDFs. Para isso, utilizaremos o framework Streamlit e o framework Langchain.
+O Objetivo deste projeto é criar uma interface amigavel para o uso do Chat GPT em conversas de arquivos PDFs. Para isso, utilizaremos o framework Streamlit e o framework Langchain.
 
 Uma amostra do aplicativo em execução pode ser encontrada [aqui!](https://chatpdf-7aoyv22kzuqebi58nu2yyv.streamlit.app/).
 
